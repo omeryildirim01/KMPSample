@@ -19,7 +19,7 @@ koinCompose = "1.1.0"
 koinCoreVersion = "3.5.0"
 kotlin = "1.9.22"
 kotlinxSerializationJson = "1.6.2"
-ktorClientDarwin = "2.3.7"
+ktorClientDarwin = "2.3.8"
 precompose = "1.5.10"
 
 [libraries]
