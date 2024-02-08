@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
+    kotlin("plugin.serialization") version "1.9.21"
 }
 
 kotlin {
@@ -32,6 +33,11 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+
+            // koin di
+            implementation(libs.ktor.client.android)
+            implementation(libs.insert.koin.koin.core)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -40,6 +46,28 @@ kotlin {
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
+
+            // kamel image loading
+            implementation(libs.kamel.image)
+
+            // ktor client
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+            implementation(libs.kotlinx.serialization.json)
+
+            // precompose
+            api(libs.precompose)
+            api(libs.precompose.viewmodel)
+            api(libs.precompose.koin)
+
+            // koin
+            implementation(libs.insert.koin.koin.core)
+            implementation(libs.koin.compose)
+        }
+        iosMain.dependencies {
+            // darwin ktor client for ios
+            implementation(libs.ktor.client.darwin)
         }
     }
 }
