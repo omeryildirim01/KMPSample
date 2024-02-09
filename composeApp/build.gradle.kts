@@ -34,7 +34,7 @@ kotlin {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
 
-            // koin di
+            // koin
             implementation(libs.ktor.client.android)
             implementation(libs.insert.koin.koin.core)
             implementation(libs.koin.android)
@@ -47,10 +47,10 @@ kotlin {
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
 
-            // kamel image loading
+            // kamel
             implementation(libs.kamel.image)
 
-            // ktor client
+            // ktor
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
