@@ -25,8 +25,7 @@ fun AppNavigation() {
         scene(route = NavigationRoute.ProductDetail.route) {
             val id = it.path.filter { p -> p.isDigit() }
             val viewModel: ProductDetailViewModel = koinViewModel(ProductDetailViewModel::class)
-            viewModel.getProduct(id.toInt())
-            ProductDetailScreen(navigator, viewModel)
+            ProductDetailScreen(navigator, viewModel, id.toInt())
         }
     }
 
