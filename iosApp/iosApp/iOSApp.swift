@@ -6,7 +6,7 @@ struct iOSApp: App {
 
 
     init() {
-       DependencyManagerKt.doInitKoinModule()
+       DependencyManagerKt.doInitKoin()
     }
 
 	var body: some Scene {

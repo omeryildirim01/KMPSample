@@ -21,6 +21,7 @@ kotlin = "1.9.22"
 kotlinxSerializationJson = "1.6.2"
 ktorClientDarwin = "2.3.8"
 precompose = "1.5.10"
+sqlDelight = "2.0.1"
 
 [libraries]
 insert-koin-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinCoreVersion" }
@@ -48,9 +49,13 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 precompose = { module = "moe.tlaster:precompose", version.ref = "precompose" }
 precompose-koin = { module = "moe.tlaster:precompose-koin", version.ref = "precompose" }
 precompose-viewmodel = { module = "moe.tlaster:precompose-viewmodel", version.ref = "precompose" }
+sqlDelight-android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
+sqlDelight-ios-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
+sqlDelight-coroutine-extensions = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqlDelight" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+sqlDelightLibrary = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
