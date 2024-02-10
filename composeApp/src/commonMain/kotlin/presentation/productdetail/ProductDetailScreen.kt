@@ -72,23 +72,23 @@ fun ProductDetailScreen(
             }
             ProductDetailScreenState.Loading -> {
                 Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                    Text("Loading...")
+                    CircularProgressIndicator()
                 }
             }
             is ProductDetailScreenState.ProductDetail -> {
                 Column(
-                    modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
+                    modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp)
                 ) {
                     (uiState.value as ProductDetailScreenState.ProductDetail).data?.let {product ->
                         KamelImage(
                             resource = asyncPainterResource(product.image),
                             contentDescription = product.name,
-                            modifier = Modifier.fillMaxWidth().height(300.dp)
+                            modifier = Modifier.fillMaxWidth().height(250.dp)
                         )
                         Spacer(modifier = Modifier.height(24.dp))
-                        Text(text = product.name, style = MaterialTheme.typography.h4)
+                        Text(text = product.name, style = MaterialTheme.typography.h6)
                         Spacer(modifier = Modifier.height(12.dp))
-                        Text(text = product.desc.orEmpty(), style = MaterialTheme.typography.h6)
+                        Text(text = product.desc.orEmpty(), style = MaterialTheme.typography.body1)
                     }
                 }
             }
